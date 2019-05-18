@@ -8,7 +8,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Noto+Serif:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="/javascripts/swiper-master/dist/css/swiper.min.css">
 	<link rel="stylesheet" href="/stylesheets/index.css">
+	<link rel="stylesheet" href="/stylesheets/animation_popup.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 </head>
 
@@ -18,14 +20,14 @@
 			<a href=""><span class="logo"></span></a>
 			<nav>
 				<ul class="menu">
-					<li class="list">ABOUT
+					<li class="list"><a href="">ABOUT</a></li>
 					</li>
-					<li class="list">MENU
-						<ul class="submenu">
-							<li><a href="">COFFEE</a></li>
-							<li><a href="">DESERT</a></li>
-							<li><a href="">FOOD</a></li>
-						</ul>
+					<li class="list"><a href="">COMMUNITY</a></li>
+					<ul class="submenu">
+						<li><a href="">COFFEE</a></li>
+						<li><a href="">DESERT</a></li>
+						<li><a href="">FOOD</a></li>
+					</ul>
 					</li>
 					<li class="list">SHOP
 						<ul class="submenu">
@@ -46,10 +48,49 @@
 				</ul>
 			</nav>
 			<ul class="login_menu">
-				<li class="list login"><a href="">LOGIN</a></li>
+				<li class="list login"><a class="dialog__trigger">LOGIN</a></li>
 				<li class="list login"><a href="">MENU</a></li>
 				<li class="list login"><a href="">MENU</a></li>
 			</ul>
+			<!-- popup section -->
+			<div class="dialog">
+				<span class="dialog__close">&#x2715;</span>
+				<h2 class="dialog__title">커넥투하트</h2>
+				<p class="dialog__content"><a id="kakao-login-btn"></a>
+					<a href="http://developers.kakao.com/logout"></a>
+					<script type='text/javascript'>
+						//<![CDATA[
+						// 사용할 앱의 JavaScript 키를 설정해 주세요.
+						Kakao.init('4f3ad7efbfbf9c7ced27c410ee3c32e4');  //여기서 아까 발급받은 키 중 javascript키를 사용해준다.
+						// 카카오 로그인 버튼을 생성합니다.
+						Kakao.Auth.createLoginButton({
+							container: '#kakao-login-btn',
+							success: function (authObj) {
+								Kakao.API.request({
+									url: '/v1/user/me',
+									success: function (res) {
+										alert(JSON.stringify(res)); //<---- kakao.api.request 에서 불러온 결과값 json형태로 출력
+										alert(JSON.stringify(authObj)); //<----Kakao.Auth.createLoginButton에서 불러온 결과값 json형태로 출력
+										console.log(res.id);//<---- 콘솔 로그에 id 정보 출력(id는 res안에 있기 때문에  res.id 로 불러온다)
+										console.log(res.kaccount_email);//<---- 콘솔 로그에 email 정보 출력 (어딨는지 알겠죠?)
+										console.log(res.properties['nickname']);//<---- 콘솔 로그에 닉네임 출력(properties에 있는 nickname 접근 
+										// res.properties.nickname으로도 접근 가능 )
+										console.log(authObj.access_token);//<---- 콘솔 로그에 토큰값 출력
+									}
+								})
+							},
+							fail: function (err) {
+								//alert(JSON.stringify(err));
+								alert("실패!");
+							}
+						});
+					  //]]>
+					</script>
+				</p>
+				<button class="dialog__action">Read more &#8594;</button>
+			</div>
+			<!--               -->
+			<div class="mobile_btn_touch"></div>
 			<span id="mobile_menu_btn"></span>
 			<div id="mobile_menu">
 				<ul class="mobile_menu_ul">
@@ -68,19 +109,24 @@
 				<div class="swiper-slide" style="background-image:url(/images/db42a256318765.59a95b346b72c.jpg)">
 					<div class="text">
 						<h2>The best beans.</h2>
-						<p><span>We have carefully selected imported beans directly from overseas and directly roasted to maintain the best taste.</span></p>
+						<p><span>We have carefully selected imported beans directly from overseas and directly roasted
+								to maintain the best taste.</span></p>
 					</div>
 				</div>
 				<div class="swiper-slide" style="background-image:url(/images/kofe-rozy-uzhin.jpg)">
 					<div class="text">
 						<h2>Lorem ipsum.</h2>
-						<p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque doloribus debitis totam eum modi, quod quasi nostrum cupiditate, iusto velit sit ex odit deserunt labore, dolorem vel architecto facilis exercitationem.</span></p>
+						<p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque doloribus debitis
+								totam eum modi, quod quasi nostrum cupiditate, iusto velit sit ex odit deserunt labore,
+								dolorem vel architecto facilis exercitationem.</span></p>
 					</div>
 				</div>
 				<div class="swiper-slide" style="background-image:url(/images/52cedb65683595.5afc8cb6871af.jpg)">
 					<div class="text">
 						<h2>Why do we use it?</h2>
-						<p><span>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </span></p>
+						<p><span>There are many variations of passages of Lorem Ipsum available, but the majority have
+								suffered alteration in some form, by injected humour, or randomised words which don't
+								look even slightly believable. </span></p>
 					</div>
 				</div>
 			</div>
@@ -111,7 +157,8 @@
 			<div class="one_menu section_image">
 				<div class="one_text">
 					<h2>기부활동 참여</h2>
-					<p>직접 디자인해서 만든 수제 머그컵과 텀블러의 판매 수익을 기부하고 있습니다. 또한 Oz coffee의 독특한 로스팅 기술로 만들어진 원두들과 커피머신들도 함께 저렴한 가격으로 판매하고 있습니다.
+					<p>직접 디자인해서 만든 수제 머그컵과 텀블러의 판매 수익을 기부하고 있습니다. 또한 Oz coffee의 독특한 로스팅 기술로 만들어진 원두들과 커피머신들도 함께 저렴한 가격으로
+						판매하고 있습니다.
 					</p>
 				</div>
 				<div class="one_sub">
@@ -122,8 +169,16 @@
 
 		<section class="two">
 			<div class="two_menu section_image">
-			<div class="two_text"><h2>스트롱홀드 S7 Pro</h2><p>기존의 반열풍식 가스 로스터들은 드럼이 달궈지는 데에 많은 시간이 소요되고, 달궈진 후 식히는 데에 또 다시 많은 시간을 기다려야 합니다.<br>로스팅을 연속적으로 진행함에 따라 드럼이 더욱 더 달궈져서 열을 조절하기가 점점 더 어려워집니다.<br>로스팅 단계(배전도)를 계획할 때에도 이런 문제로 인해 ‘약’에서 ‘중’, ‘중’에서 ‘강’으로 로스팅 정도를 계획할 수 밖에 없습니다.<br>그에 비해, 스마트 로스터 S7 Pro는 가스 로스터의 이런 제약사항들 없이 언제든지 원하는 정도의 로스팅 계획을 수립할 수 있습니다. <br>로스팅 머신 자체가 받은 열을 측정하는 ‘타워드럼 온도 센서’로 드럼의 온도를 조절할 수 있으며, 열 조절에 따라 드럼 내부와 타워드럼 자체의 온도가 신속하고 안정적으로 반응합니다.</p></div>
-			<iframe width="40%" height="70%" src="https://www.youtube.com/embed/kmmbyCnrvzM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				<div class="two_text">
+					<h2>스트롱홀드 S7 Pro</h2>
+					<p>기존의 반열풍식 가스 로스터들은 드럼이 달궈지는 데에 많은 시간이 소요되고, 달궈진 후 식히는 데에 또 다시 많은 시간을 기다려야 합니다.<br>로스팅을 연속적으로 진행함에
+						따라 드럼이 더욱 더 달궈져서 열을 조절하기가 점점 더 어려워집니다.<br>로스팅 단계(배전도)를 계획할 때에도 이런 문제로 인해 ‘약’에서 ‘중’, ‘중’에서 ‘강’으로
+						로스팅 정도를 계획할 수 밖에 없습니다.<br>그에 비해, 스마트 로스터 S7 Pro는 가스 로스터의 이런 제약사항들 없이 언제든지 원하는 정도의 로스팅 계획을 수립할 수
+						있습니다. <br>로스팅 머신 자체가 받은 열을 측정하는 ‘타워드럼 온도 센서’로 드럼의 온도를 조절할 수 있으며, 열 조절에 따라 드럼 내부와 타워드럼 자체의 온도가
+						신속하고 안정적으로 반응합니다.</p>
+				</div>
+				<iframe width="40%" height="70%" src="https://www.youtube.com/embed/kmmbyCnrvzM" frameborder="0"
+					allow="autoplay; encrypted-media" allowfullscreen></iframe>
 			</div>
 		</section>
 		<section class="three">
@@ -192,24 +247,36 @@
 			<div class="footer_logo"></div>
 			<div class="footer_content">
 				<div class="footer_text">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae nihil est qui aliquid minus laudantium quod at sunt velit, consequatur voluptatum itaque atque distinctio cumque a omnis consectetur adipisci debitis!</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae nihil est qui aliquid minus
+						laudantium quod at sunt velit, consequatur voluptatum itaque atque distinctio cumque a omnis
+						consectetur adipisci debitis!</p>
 				</div>
 				<div class="social">
 					<ul class="social_icon">
-						<li class="icon _fb"><a href="#"><img src="/images/snsicon/sns_fb_s.png" alt="facebook icon"></a></li>
-						<li class="icon _ka"><a href="#"><img src="/images/snsicon/sns_kakao_s.png" alt="kakao icon"></a></li>
-						<li class="icon _tw"><a href="#"><img src="/images/snsicon/sns_twt_s.png" alt="twiter icon"></a></li>
-						<li class="icon _ba"><a href="#"><img src="/images/snsicon/sns_naverband_s.png" alt="band icon"></a></li>
+						<li class="icon _fb"><a href="#"><img src="/images/snsicon/sns_fb_s.png"
+									alt="facebook icon"></a></li>
+						<li class="icon _ka"><a href="#"><img src="/images/snsicon/sns_kakao_s.png"
+									alt="kakao icon"></a></li>
+						<li class="icon _tw"><a href="#"><img src="/images/snsicon/sns_twt_s.png" alt="twiter icon"></a>
+						</li>
+						<li class="icon _ba"><a href="#"><img src="/images/snsicon/sns_naverband_s.png"
+									alt="band icon"></a></li>
 					</ul>
 				</div>
 			</div>
 			<address>
-       <ul class="contact">CONTACT
-       	<li class="contact_list"><span><img src="/images/snsicon/icon/f7e6479a.png" style="width:30px;height: 30px;" alt=""></span><span class="spantext">경기도 시흥시 정왕4동 고합아파트 108동 1001호</span></li>
-       	<li class="contact_list"><span><img src="/images/snsicon/icon/phone-icon-white.png"style="width:30px;height: 30px;" alt=""></span><span class="spantext">010-4243-3704</span></li>
-       	<li class="contact_list"><span><img src="/images/snsicon/icon/email-icon.png" style="width:30px;height: 30px;"alt=""></span><span class="spantext">rladyd818@naver.com</span></li>
-       </ul>
-        </address>
+				<ul class="contact">CONTACT
+					<li class="contact_list"><span><img src="/images/snsicon/icon/f7e6479a.png"
+								style="width:30px;height: 30px;" alt=""></span><span class="spantext">경기도 시흥시 정왕4동 고합아파트
+							108동 1001호</span></li>
+					<li class="contact_list"><span><img src="/images/snsicon/icon/phone-icon-white.png"
+								style="width:30px;height: 30px;" alt=""></span><span
+							class="spantext">010-4243-3704</span></li>
+					<li class="contact_list"><span><img src="/images/snsicon/icon/email-icon.png"
+								style="width:30px;height: 30px;" alt=""></span><span
+							class="spantext">rladyd818@naver.com</span></li>
+				</ul>
+			</address>
 			<div class="copyright">
 				<ul class="copyright_box">
 					<li class="copyright_list"><a href="">회사소개</a></li>
@@ -225,6 +292,7 @@
 	<script src="/javascripts/swiper-master/dist/js/swiper.min.js"></script>
 	<script src="/javascripts/index.js"></script>
 	<script src="/javascripts/sidemenu/sidemenu.js"></script>
+	<script src="/javascripts/popup.js"></script>
 </body>
 
 </html>

@@ -595,23 +595,36 @@ address {
 		background-color: white;
 		transition: all .3s;
 	}
-	#mobile_menu_btn:hover {
+	.mobile_menu_touch:hover~#mobile_menu_btn {
 		width: 30px;
 		height: 3px;
 		background-color: beige;
 		transition: all .3s;
 	}
-	#mobile_menu_btn:hover#mobile_menu_btn::before {
+	.mobile_menu_touch:hover~#mobile_menu_btn::before {
 		width: 40px;
 		height: 3px;
 		background-color: beige;
 		transition: all .3s;
 	}
-	#mobile_menu_btn:hover#mobile_menu_btn::after {
+	.mobile_menu_touch:hover~#mobile_menu_btn::after {
 		width: 40px;
 		height: 3px;
 		background-color: beige;
 		transition: all .3s;
+	}
+	.mobile_btn_touch {
+		width: 60px;
+		height: 60px;
+		position: absolute;
+		right: 40px;
+		top: 10px;
+		cursor: pointer;
+		z-index: 10;
+	}
+	.mobile_btn_touch:hover~#mobile_menu,
+	#mobile_menu:hover {
+		right: 0px;
 	}
 	#mobile_menu {
 		color: white;
