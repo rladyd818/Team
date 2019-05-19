@@ -4,13 +4,13 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>실습 예제</title>
+	<title>커넥투하트</title>
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Noto+Serif:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="/javascripts/swiper-master/dist/css/swiper.min.css">
 	<link rel="stylesheet" href="/stylesheets/index.css">
 	<link rel="stylesheet" href="/stylesheets/animation_popup.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script src="./javascripts/kakaoSDK.js"></script>
 
 </head>
 
@@ -52,7 +52,7 @@
 				<li class="list login"><a href="">MENU</a></li>
 				<li class="list login"><a href="">MENU</a></li>
 			</ul>
-			<!-- popup section -->
+			<!-- popup section start -->
 			<div class="dialog">
 				<span class="dialog__close">&#x2715;</span>
 				<h2 class="dialog__title">커넥투하트</h2>
@@ -89,7 +89,7 @@
 				</p>
 				<button class="dialog__action">Read more &#8594;</button>
 			</div>
-			<!--               -->
+			<!-- popup section end -->
 			<div class="mobile_btn_touch"></div>
 			<span id="mobile_menu_btn"></span>
 			<div id="mobile_menu">
@@ -100,6 +100,8 @@
 					<li class="mobile_menu_list">SHOP</li>
 					<li class="mobile_menu_list">NEWS</li>
 					<li class="mobile_menu_list">CONTACT</li>
+					<li class="mobile_menu_list"><a class="dialog__trigger">LOGIN</a></li>
+					<li class="mobile_menu_list"><a href="">SIGNUP</a></li>
 				</ul>
 				<div id="close"></div>
 			</div>
