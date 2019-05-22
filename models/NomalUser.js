@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Define Schemes
-const UserSchema = new mongoose.Schema({
+const NomalUserSchema = new mongoose.Schema({
     email: {type: String, unique: true },
     password: String,
     confirm: String,
@@ -13,4 +13,4 @@ const UserSchema = new mongoose.Schema({
 });
 
 // Create Model & Export
-module.exports = mongoose.model('User2', UserSchema);
+module.exports = mongoose.model('NomalUser', NomalUserSchema);

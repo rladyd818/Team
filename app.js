@@ -3,16 +3,23 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var bluebird = require('bluebird');
-var User = require('./models/User')
+var User = require('./models/NomalUser')
 
-var mainRouter = require('./routes/main');
-var usersRouter = require('./routes/users');
-var loginRouter = require('./routes/login');
+var indexRouter = require('./routes')
 
 var app = express();
+const sess = {
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    httpOnly: true,
+    secure: false,
+  },
+}
  
 mongoose.connect('mongodb://localhost/admin', {useNewUrlParser: true});
 mongoose.set('useCreateIndex', true);
@@ -26,10 +33,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session(sess));
 
-app.use('/', mainRouter);
-app.use('/users', usersRouter);
-app.use('/login', loginRouter);
+app.use('/', indexRouter);
+
 /* database setting test section - start */
 /*
 var user = new User({
