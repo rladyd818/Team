@@ -85,8 +85,9 @@ router.post('/signup', function (req, res, next) {
   // res.json({result: 1});
   // });     
 });
-router.get("/checkUser", function (req, res, next) {
-  res.json(req.session.user);
+router.post("/checkUser", function (req, res, next) {
+  console.log('checkUser에 들어옴');
+  //res.json(req.session.user);
 });
 router.post("/clearSession", function (req, res, next) {
   req.session.user = undefined;

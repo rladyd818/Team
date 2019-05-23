@@ -13,7 +13,6 @@
 	<script src="./javascripts/kakaoSDK.js"></script>
 
 </head>
-
 <body>
 	<header>
 		<div class="gnb">
@@ -48,7 +47,7 @@
 				</ul>
 			</nav>
 			<ul class="login_menu">
-				<li class="list login"><a class="dialog__trigger">LOGIN</a></li>
+				<li class="list login"><a class="dialog__trigger"><%= name %></a></li>
 				<li class="list login"><a href="">MENU</a></li>
 				<li class="list login"><a href="">MENU</a></li>
 			</ul>
@@ -104,6 +103,20 @@
 							}
 						});
 					  //]]>
+
+						$(document).ready(function() {
+							$.post('/api/checkUser', {
+							}, function (res) { 
+							}, 'json') 
+							.done(function (res) { 
+								console.log(JSON.stringify(res)); 	
+							}) 
+							.fail(function (res) { 
+								alert('실패'); 
+							}) 
+							.always(function (res) { 
+							})
+						});
 					</script>
 				</p>
 				<button class="dialog__action">Read more &#8594;</button>

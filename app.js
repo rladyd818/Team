@@ -15,6 +15,7 @@ var app = express();
 const sess = {
   resave: false,
   saveUninitialized: false,
+  secret: '@#@$MYSIGN#@$#$',
   cookie: {
     httpOnly: true,
     secure: false,
