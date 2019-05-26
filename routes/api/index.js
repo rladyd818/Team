@@ -87,6 +87,7 @@ router.post('/signup', function (req, res, next) {
 });
 router.post("/checkUser", function (req, res, next) {
   console.log('checkUser에 들어옴');
+  console.log('세션값'+req.session);
   //res.json(req.session.user);
 });
 router.post("/clearSession", function (req, res, next) {
