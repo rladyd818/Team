@@ -8,6 +8,7 @@ var loginRouter = require('./login');
 var login2Router = require('./login2');
 var signRouter = require('./sign');
 var psy_test1Router = require('./psy_test1');
+var introRouter =require('./intro')
 
 router.use("/",mainRouter);
 router.use("/api",api);
@@ -16,5 +17,5 @@ router.use("/login",loginRouter);
 router.use("/login2",login2Router);
 router.use("/sign",signRouter);
 router.use("/psy_test1",psy_test1Router);
-
+router.use("/intro",introRouter);
 module.exports = router;
