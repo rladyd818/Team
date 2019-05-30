@@ -2,7 +2,6 @@
 * {
     box-sizing: border-box;
   }
-
   body {
     background: #f1f1f1;
     color: #333333;
@@ -23,7 +22,7 @@
             justify-content: center;
   }
   */
-  
+
   .dialog__trigger {
     /*border: 3px solid #333333;*/
     /*background: #f1f1f1;*/
@@ -68,7 +67,7 @@
     -webkit-transform: translateY(-3px);
             transform: translateY(-3px);
   }
-  
+
   .dialog {
     background: #f1f1f1;
     width: 70%;
@@ -118,6 +117,7 @@
     padding: 0 0 15px 0;
     border-bottom: 2px solid #333333;
   }
+
   .dialog .dialog__content {
     font-size: 1.1rem;
     line-height: 2rem;
@@ -125,4 +125,4 @@
   .dialog .dialog__action {
     margin: 0;
     font-size: 1rem;
-  }
+  } 

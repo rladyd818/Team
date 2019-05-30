@@ -103,14 +103,14 @@
 
     <h1 class='h1_main'>회원가입</h1>
     <hr width=70% color="orange" align="center" size=2 /><br>
-    <form action="" method="post"></form>
+    <form action="" method="post">
     <!--action 설정-->
     <div class="main">
         <table cellpadding="10%" cellspacing="0px">
             <tr>
                 <td class="site1"><label>이름<span style="color:red;">*</span></label><br />
                 </td>
-                <td class="site2"><input id="form_box" type="text" name="name" placeholder="이름" maxlength="10" required
+                <td class="site2"><input class="form_box" type="text" name="name" placeholder="이름" maxlength="10" required
                         autofocus /><br /></td>
             </tr>
 
@@ -124,21 +124,21 @@
             <tr>
                 <td class="site1">
                     <label>이메일<span style="color:red;">*</span></label><br /></td>
-                <td class="site2"><input id="form_box" type="email" name="email" placeholder="이메일" required /><br />
+                <td class="site2"><input class="form_box" type="email" name="email" placeholder="이메일" required /><br />
                 </td>
             </tr>
             <tr>
                 <td class="site1">
                     <label>전화번호<span style="color:red;">*</span></label><br /></td>
-                <td class="site2"><input id="form_box" type="tel" name="tel" id="tel" placeholder="전화번호"
+                <td class="site2"><input class="form_box" type="tel" name="tel" id="tel" placeholder="전화번호"
                         aria-label="전화번호 입력" maxlength="16" required /><br /></td>
             </tr>
             <tr>
                 <td class="site1">
                     <label>생년월일<span style="color:red;">*</span></label><br /></td>
-                <td class="site2"><input id="birth_box" type="text" name="birth" placeholder="년(4자)" aria-label="년(4자)"
+                <td class="site2"><input class="birth_box" type="text" name="birth" placeholder="년(4자)" aria-label="년(4자)"
                         maxlength="4" />
-                    <select id="birth_box" aria-label="월">
+                    <select class="birth_box" aria-label="월">
                         <option>월</option>
                         <option value="01">
                             1
@@ -177,27 +177,27 @@
                             12
                         </option>
                     </select>
-                    <input type="text" id="birth_box" placeholder="일" aria-label="일" class="int" maxlength="2"><br />
+                    <input type="text" class="birth_box" placeholder="일" aria-label="일" class="int" maxlength="2"><br />
                 </td>
             </tr>
             <tr>
                 <td class="site1">
                     <label>아이디<span style="color:red;">*</span></label><br /></td>
-                <td class="site2"><input id="id" type="text" name="id" maxlength="20" placeholder="아이디입력"
+                <td class="site2"><input class="id" type="text" name="id" maxlength="20" placeholder="아이디입력"
                         onchange="validate(document.getElementById('id'))"><br />
                     <p id="errormessage">5~20자 사이 문자와 숫자만 가능합니다.</p>
                 </td>
             <tr>
                 <td class="site1">
                     <label>비밀번호<span style="color:red;">*</span></label><br /></td>
-                <td class="site2"><input id="pass" type="password" name="password" placeholder="비밀번호입력" maxlength="20"
+                <td class="site2"><input class="pass" type="password" name="password" placeholder="비밀번호입력" maxlength="20"
                         required onchange="validate(document.getElementById('pass'))"/><br />
                     <p id="errormessage">5~20자 사이 문자와 숫자만 가능합니다.</p>
                 </td>
             <tr>
                 <td class="site1">
                     <label>비밀번호 확인<span style="color:red;">*</span></label><br /></td>
-                <td class="site2"><input id="pass1" type="password" name="password_check"
+                <td class="site2"><input class="pass1" type="password" name="password_check"
                         placeholder="한번 더 입력하세요" required onchange="correct(document.getElementById('pass'),document.getElementById('pass1'))"/><br />
                         <p>동일한 비밀번호을 입력하세요.</p>
                     </td>
@@ -205,7 +205,7 @@
                 <td colspan="2" class="site2">
                     <input type="checkbox" name="agree" value="agree" /><span style="color:red;">*</span>나는 개인정보활용에
                     동의합니다.<br />
-                    <input type="submit" id="button" value="가입하기" onclick="alert('실행이 완료됐습니다.')" /></td>
+                    <input type="submit" class="s_button" value="가입하기" onclick="alert('실행이 완료됐습니다.')" /></td>
             </tr>
             <!--alert말고 데이터 저장되도록-->
     </div>
