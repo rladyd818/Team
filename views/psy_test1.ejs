@@ -25,7 +25,7 @@
 					<li class="list">상담
 						<ul class="submenu">
 							<li><a href="">튜토리얼</a></li>
-							<li><a href="/psy_test">간단한 심리검사</a></li>
+							<li><a href="/psy_test1">간단한 심리검사</a></li>
 							<li><a href="">상담사 연결</a></li>
 						</ul>
 					</li>
@@ -41,15 +41,9 @@
 			<ul class="login_menu">
 				<li class="list login"><a class="dialog__trigger">login</a></li>
 				<li class="list login"><a class="dialog__trigger">SIGNUP</a></li>
-				<li class="list login"><a class="dialog__trigger">MENU</a></li>
+				<li class="list login"><a href="">MENU</a></li>
 			</ul>
 
-			<!-- signup popup section start -->
-			<div class="dialog">
-				<span class="dialog__close">&#x2715;</span>
-				<h2 class="dialog__title">회원가입</h2>
-				<p class="dialog__content">
-				<form action="" method="post"></form>
     <!--action 설정-->
     <div class="s_main">
         <table cellpadding="10%" cellspacing="0px">
@@ -156,7 +150,6 @@
             <!--alert말고 데이터 저장되도록-->
     </div>
     </form></p>
-				<button class="dialog__action">Read more &#8594;</button>
 			</div>
 			<!-- signup popup section end -->
 
@@ -213,20 +206,6 @@
 						});
 					  //]]>
 
-						$(document).ready(function() {
-							$.post('/api/checkUser', {
-								alert()
-							}, function (res) { 
-							}, 'json') 
-							.done(function (res) { 
-								console.log(JSON.stringify(res)); 	
-							}) 
-							.fail(function (res) { 
-								alert('실패'); 
-							}) 
-							.always(function (res) { 
-							})
-						});
 					</script>
 				</p>
 				<button class="dialog__action">Read more &#8594;</button>
