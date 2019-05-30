@@ -5,7 +5,9 @@ function dialog() {
         dialogClose = $('.dialog__close'),
         dialogTitle = $('.dialog__title'),
         dialogContent = $('.dialog__content'),
-        dialogAction = $('.dialog__action');
+        dialogAction = $('.dialog__action'),
+        dialogId = $('.login_id'),
+        dialogPassword = $('.login_password');
 
     // Open the dialog
     dialogTrigger.on('click', function(e) {
@@ -30,7 +32,9 @@ function dialog() {
         if ($(e.target).is(dialogBox) === false &&
             $(e.target).is(dialogTitle) === false &&
             $(e.target).is(dialogContent) === false &&
-            $(e.target).is(dialogAction) === false) {
+            $(e.target).is(dialogAction) === false &&
+            $(e.target).is(dialogId) === false &&
+            $(e.target).is(dialogPassword) === false) {
             dialogBox.removeClass("dialog--active");
         }
     });

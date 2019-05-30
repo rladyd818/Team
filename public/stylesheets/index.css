@@ -480,6 +480,51 @@ section {
 	background-image: url(/images/88a23962382907.5a8e6843b183a.jpg);
 }
 
+/*-----------------------login------------------------------*/
+
+.login_main {
+	width: 300px;
+	height: 200px;
+	padding-top: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom: 10px;
+	border: 1px solid orange;
+	margin: auto;
+}
+
+.login_id {
+	width: 250px;
+	height: 20px;
+   margin-left: 10px;
+	margin-bottom: 10px;
+	float: left;
+}
+
+.login_password {
+	width: 250px;
+	height: 20px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	float: left;
+}
+
+.login_button {
+	border: 1px;
+	margin-top: 10px;
+	width: 200px;
+	height: 50px;
+	margin-left: 40px;
+	background-color: orange;
+}
+.login_button:hover{
+	/*
+	text-decoration:underline;
+	*/
+	background-color:darkgoldenrod;
+	cursor: pointer;
+}
+
 /*-----------------------signup------------------------------*/
 
 .s_main {
