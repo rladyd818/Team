@@ -43,13 +43,13 @@
     <h1 class='h1_main'>회원가입</h1>
     <hr width=70% color="orange" align="center" size=2 /><br>
      <div class="s_main">
-    <form action="" method="post">
+    <form action="/api/signUp" method="post">
     <!--action 설정-->
         <table cellpadding="10%" cellspacing="0px">
             <tr>
                 <td class="site1"><label>이름<span style="color:red;">*</span></label><br />
                 </td>
-                <td class="site2"><input class="form_box" type="text" name="name" placeholder="이름" maxlength="10" required
+                <td class="site2"><input class="form_box" type="text" name="nickname" placeholder="이름" maxlength="10" required
                         autofocus /><br /></td>
             </tr>
 
@@ -72,6 +72,7 @@
                 <td class="site2"><input class="form_box" type="tel" name="tel" id="tel" placeholder="전화번호"
                         aria-label="전화번호 입력" maxlength="16" required /><br /></td>
             </tr>
+            <!--
             <tr>
                 <td class="site1">
                     <label>생년월일<span style="color:red;">*</span></label><br /></td>
@@ -119,6 +120,7 @@
                     <input type="text" class="birth_box" placeholder="일" aria-label="일" class="int" maxlength="2"><br />
                 </td>
             </tr>
+            -->
             <tr>
                 <td class="site1">
                     <label>아이디<span style="color:red;">*</span></label><br /></td>
@@ -136,7 +138,7 @@
             <tr>
                 <td class="site1">
                     <label>비밀번호 확인<span style="color:red;">*</span></label><br /></td>
-                <td class="site2"><input class="pass1" type="password" name="password_check"
+                <td class="site2"><input class="pass1" type="password" name="confirm"
                         placeholder="한번 더 입력하세요" required onchange="correct(document.getElementById('pass'),document.getElementById('pass1'))"/><br />
                         <p>동일한 비밀번호을 입력하세요.</p>
                     </td>

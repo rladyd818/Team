@@ -7,6 +7,21 @@ const crypto = require('crypto'); //Node.js 에서 제공하는 암호화 모듈
 // mapping 
 // Login
 router.post('/login', function (req, res, next) {
+  console.log(req.body.id);
+  console.log(req.body.password);
+  if(req.body.check === undefined) {
+    User.findOne({ id: req.body.id, password: req.body.password }, function (err, user) {
+      //console.log(req.body);
+      // 구문 error
+      if (err) return res.status(500).json({ error: err });
+      // User가 없으면 error
+      if (!user) return res.json({ error: 'user not found' });
+    });
+    //req.session.user = User;
+    res.render('main',{name: req.session.user.id});
+    console.log('로그인 성공!');
+  }
+  /*
   switch (req.body.check) {
     case '0':
       console.log("로그인 세션 확인");
@@ -41,6 +56,7 @@ router.post('/login', function (req, res, next) {
       })
       break;
   }
+  */
   //DB에 암호화 하여 저장하였으니 DB에서 확인할때도 암호화 된 키로 확인한다
   //let cipher = crypto.createCipher('aes192', 'key');
   //cipher.update(req.body.user.password, 'utf8', 'base64');
@@ -62,7 +78,53 @@ router.post('/login', function (req, res, next) {
 router.post('/signup', function (req, res, next) {
   console.log('signUp에 들어옴');
   console.log(req.body);
+  
+  if (req.body.type === undefined) {
+    console.log("일반 회원가입");
 
+      const user = new User();
+      user.id = req.body.id;
+      user.nickname = req.body.nickname;
+      user.email = req.body.email;
+      user.password = req.body.password;
+      user.confirm = req.body.confirm;
+      user.gender = req.body.gender;
+      user.tel = req.body.tel;
+      user.save(function (err) {
+        if (err) {
+          console.log(err);
+          res.status(500).json(err);
+          return;
+        } else {
+          res.render('main',{name: 'LOGIN'});
+          console.log('회원가입 성공!');
+        }
+        /*
+        req.session.user = user;
+        res.json(user);
+        */
+      });
+  }
+  else {
+    console.log("카카오 회원가입");
+
+      const kakao_user = new Kakao_User();
+      kakao_user.id = req.body.id;
+      kakao_user.nickname = req.body.nickname;
+      kakao_user.save(function (err) {
+        if (err) {
+          console.log(err);
+          res.json({ result: 0 });
+          req.session.user = kakao_user;
+          console.log(req.session.user);
+          //res.json(kakao_user);
+          return;
+        } else {
+          res.json({ result: 1 });
+        }
+      });
+  }
+/*
   switch (req.body.type) {
     case '1':
       console.log("일반 회원가입");
@@ -102,7 +164,7 @@ router.post('/signup', function (req, res, next) {
       });
       break;
   }
-
+*/
   // // encryption 
   // let  cipher = crypto.createCipher('aes192', 'key');
   // cipher.update(user.password, 'utf8', 'base64');
