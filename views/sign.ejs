@@ -6,68 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>회원가입</title>
-    <style>
-        .main {
-            width: 750px;
-            height: 700px;
-            padding-top: 10px;
-            padding-left: 50px;
-            padding-right: 50px;
-            padding-bottom: 10px;
-            border: 1px solid orange;
-            margin: auto;
-        }
-
-        #form_box,
-        #id,
-        #pass,
-        #pass1 {
-            width: 500px;
-            height: 20px;
-            padding-left: 10px;
-            float: right;
-        }
-
-        #birth_box {
-            width: 100px;
-            height: 20px;
-            float: left;
-        }
-
-        #button {
-            display: block;
-            margin-top: 25px;
-            border: 1px;
-            margin-bottom: 10px;
-            margin-left: 250px;
-            width: 200px;
-            height: 50px;
-            background-color: orange;
-        }
-        #button:hover{
-            text-decoration:underline;
-            background-color:darkgoldenrod;
-
-        }
-
-        .site1 {
-            height: 40px;
-            margin-bottom: 10px;
-        }
-
-        .site2 {
-            height: 40px;
-            margin-bottom: 10px;
-        }
-
-        .h1_main {
-            text-align: center;
-        }
-
-        .sign_p {
-            font-size: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="/stylesheets/index.css">
 </head>
 
 <body>
@@ -103,9 +42,9 @@
 
     <h1 class='h1_main'>회원가입</h1>
     <hr width=70% color="orange" align="center" size=2 /><br>
+     <div class="s_main">
     <form action="" method="post">
     <!--action 설정-->
-    <div class="main">
         <table cellpadding="10%" cellspacing="0px">
             <tr>
                 <td class="site1"><label>이름<span style="color:red;">*</span></label><br />
@@ -208,8 +147,8 @@
                     <input type="submit" class="s_button" value="가입하기" onclick="alert('실행이 완료됐습니다.')" /></td>
             </tr>
             <!--alert말고 데이터 저장되도록-->
+            </form>
     </div>
-    </form>
 </body>
 
 </html>
