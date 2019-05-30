@@ -1,4 +1,4 @@
-aside#left {
+#left {
     width: 25%;
     float: left;
     margin-left: 30px;
@@ -34,7 +34,7 @@ aside#left {
 .test_list {
 text-align: center;
 }
-.main {
+.psy_main {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     overflow: hidden;
@@ -48,7 +48,7 @@ text-align: center;
        list-style: none;
    }
 
-   .button {
+   .psy_button {
        display: block;
        margin-top: 25px;
        border: 1px;
@@ -59,7 +59,7 @@ text-align: center;
        background-color: orange;
    }
 
-   .button:hover {
+   .psy_button:hover {
        text-decoration: underline;
        background-color: darkgoldenrod;
 
