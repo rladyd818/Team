@@ -7,8 +7,7 @@ const crypto = require('crypto'); //Node.js 에서 제공하는 암호화 모듈
 // mapping 
 // Login
 router.post('/login', function (req, res, next) {
-  console.log(req.body.id);
-  console.log(req.body.password);
+  console.log('login router 입장');
   if(req.body.check === undefined) {
     User.findOne({ id: req.body.id, password: req.body.password }, function (err, user) {
       //console.log(req.body);
@@ -16,10 +15,11 @@ router.post('/login', function (req, res, next) {
       if (err) return res.status(500).json({ error: err });
       // User가 없으면 error
       if (!user) return res.json({ error: 'user not found' });
+      req.session.user = user;
+      console.log(req.session.user);
+      res.render('main',{name: req.session.user.id});
+      console.log('로그인 성공!');
     });
-    //req.session.user = User;
-    res.render('main',{name: req.session.user.id});
-    console.log('로그인 성공!');
   }
   /*
   switch (req.body.check) {
