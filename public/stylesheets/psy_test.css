@@ -1,0 +1,66 @@
+aside#left {
+    width: 25%;
+    float: left;
+    margin-left: 30px;
+}
+
+#left h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+#left ul {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #FFF;
+    list-style: none;
+    text-indent: 15px;
+}
+
+#left ul li {
+    background: orange;
+    line-height: 28px;
+    border-bottom: 1px solid white;
+}
+
+#left ul a {
+    text-decoration: none;
+    color: #FFF;
+    display: block;
+}
+#left ul li a:hover {
+        background: orangered;
+    }
+.test_list {
+text-align: center;
+}
+.main {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    overflow: hidden;
+    width: 700px;
+    float: left;
+    margin-left: 50px;
+    }
+    
+   .depress_Q,  .depress_A {
+       clear: both;
+       list-style: none;
+   }
+
+   .button {
+       display: block;
+       margin-top: 25px;
+       border: 1px;
+       margin-bottom: 10px;
+       margin-left: 250px;
+       width: 200px;
+       height: 50px;
+       background-color: orange;
+   }
+
+   .button:hover {
+       text-decoration: underline;
+       background-color: darkgoldenrod;
+
+   }

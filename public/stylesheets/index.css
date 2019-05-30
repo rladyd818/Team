@@ -11,19 +11,19 @@ body {
 
 a:link {
 	text-decoration: none;
-	color: white;
+	color: orangeRED;
 }
 
 a:visited {
-	color: white;
+	color: ORANGERED;
 }
 
 a:hover {
-	color: white;
+	color: ORANGERED;
 }
 
 a:active {
-	color: white;
+	color: orangered;
 }
 
 header {
@@ -35,15 +35,15 @@ header {
 	z-index: 9999;
 	padding: 10px 0;
 	width: 100%;
-	background-color: black;
+	background-color: #FFDF9E;
 }
 
 .logo {
 	margin: 0 20px;
-	background-image: url(/images/logo.png);
+	background-image: url(/images/maternity.svg);
 	background-position: center;
 	background-size: cover;
-	width: 140px;
+	width: 100px;
 	height: 60px;
 	display: inline-block;
 	position: relative;
@@ -73,9 +73,9 @@ nav {
 	margin: 0;
 	padding: 0;
 	color: aliceblue;
-	background: black;
+	background: #FFDF9E;
 }
-.list:hover{color:#bebebe;}
+.list:hover{color:red;}
 .list:hover .submenu {
 	visibility: visible;
 	opacity: 1;
@@ -89,7 +89,8 @@ nav {
 	display: inline-block;
 	position: relative;
 	cursor: pointer;
-	background: black;
+	background:#FFDF9E;
+	color: orangered;
 }
 
 .submenu {
@@ -102,7 +103,7 @@ nav {
 	transform: translateY(-3em);
 	transition: all 0.5s, visibility 0.5s;
 	opacity: 0;
-	background: black;
+	background: #FFDF9E;
 	visibility: hidden;
 	border-radius: 8px;
 }
