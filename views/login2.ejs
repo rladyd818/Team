@@ -6,62 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>login</title>
-    <style>
-        .main {
-            width: 300px;
-            height: 220px;
-            padding-top: 10px;
-            padding-left: 50px;
-            padding-right: 50px;
-            padding-bottom: 10px;
-            border: 1px solid orange;
-            margin: auto;
-        }
-
-        #id {
-            width: 250px;
-            height: 20px;
-           margin-left: 10px;
-            margin-bottom: 10px;
-            float: left;
-        }
-
-        #password {
-            width: 250px;
-            height: 20px;
-            margin-left: 10px;
-            margin-bottom: 10px;
-            float: left;
-        }
-
-        #button {
-            border: 1px;
-            margin-top: 10px;
-            width: 200px;
-            height: 50px;
-            margin-left: 40px;
-            background-color: orange;
-        }
-        #button:hover{
-            text-decoration:underline;
-            background-color:darkgoldenrod;
-
-        }
-
-    </style>
+    <link rel="stylesheet" href="/stylesheets/index.css">
 </head>
 
 <body>
-    <div class="main">
+    <div class="login_main">
         <h2 style="text-align:center">로그인</h2>
-        <form action="로그인화면.html" method="get">
+        <form action="/api/login" method="POST">
             <!--action지정하기-->
 
-            <input type="text" id="id" name="id" placeholder="아이디" /><br />
-            <input type="password" id="password" name="password" placeholder="비밀번호" /><br />
-            <input type="submit" id="button" value="로그인" onclick="alert('실행이 완료됐습니다.')" />
-    </div>
+            <input type="text" class="login_id" name="id" placeholder="아이디" /><br />
+            <input type="password" class="login_password" name="password" placeholder="비밀번호" /><br />
+            <input type="submit" class="login_button" value="로그인" onclick="alert('실행이 완료됐습니다.')" />
     </form>
+    </div>
 </body>
 
 </html>

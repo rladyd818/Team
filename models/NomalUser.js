@@ -2,11 +2,14 @@ const mongoose = require('mongoose');
 
 // Define Schemes
 const NomalUserSchema = new mongoose.Schema({
-    email: {type: String, unique: true },
+    id: {type: String, unique: true},
+    email: {type: String, unique: true},
     password: String,
     confirm: String,
     nickname: String,
-    agreement: Boolean
+    agreement: Boolean,
+    gender: String,
+    tel: {type: Number, unique: true},
 },
 {
   timestamps: true

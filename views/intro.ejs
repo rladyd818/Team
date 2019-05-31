@@ -4,18 +4,153 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>회사 소개</title>
+	<title>커넥투하트</title>
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Noto+Serif:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="/javascripts/swiper-master/dist/css/swiper.min.css">
-    <link rel="stylesheet" href="/stylesheets/index.css">
+	<link rel="stylesheet" href="/stylesheets/index.css">
+    <link rel="stylesheet" href="/stylesheets/animation_popup.css">
     <link rel="stylesheet" href="/stylesheets/intro.css">
-	<link rel="stylesheet" href="/stylesheets/animation_popup.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script src="./javascripts/kakaoSDK.js"></script>
-	<script src="./javascripts/inputDataCheck.js"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    </head>
 
-</head>
 <body>
+                <header>
+                    <div class="gnb">
+                        <a href=""><span class="logo"></span></a>
+                        <nav>
+                            <ul class="menu">
+                                <li class="list"><a href="">홈페이지 소개</a></li>
+                                </li>
+                                <li class="list">상담
+                                    <ul class="submenu">
+                                        <li><a href="">튜토리얼</a></li>
+                                        <li><a href="/psy_test1">간단한 심리검사</a></li>
+                                        <li><a href="">상담사 연결</a></li>
+                                    </ul>
+                                </li>
+                                <li class="list">고객센터
+                                    <ul class="submenu">
+                                        <li><a href="">1:1문의</a></li>
+                                        <li><a href="">FAQ</a></li>
+                                        <li><a href="">공지시항</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                        <ul class="login_menu">
+                            <li class="list login"><a class="dialog__trigger">login</a></li>
+                            <li class="list login"><a href="/sign">SIGNUP</a></li>
+                            <li class="list login"><a >MENU</a></li>
+                        </ul>
+                        <div class="dialog">
+                            <span class="dialog__close">&#x2715;</span>
+                            <h2 class="dialog__title">커넥투하트</h2>
+                            <p class="dialog__content">
+                            <div class="login_main">
+                                <h2 style="text-align:center">로그인</h2>
+                                <form action="/api/login" method="post">
+                                <!--action지정하기-->
+            
+                                    <input type="text" class="login_id" name="id" placeholder="아이디" /><br />
+                                    <input type="password" class="login_password" name="password" placeholder="비밀번호" /><br />
+                                    <input type="submit" class="login_button" value="로그인" onclick="alert('실행이 완료됐습니다.')" />
+                                </form>
+                                </p>
+                                <a style="margin-left:30px;" id="kakao-login-btn"></a>
+                                <a href="http://developers.kakao.com/logout"></a>
+                                <p>카카오톡 로그인을 원하시면 버튼을 클릭하세요</p>
+                            </div>
+                            <script type='text/javascript'>
+                                //<![CDATA[
+                                // 사용할 앱의 JavaScript 키를 설정해 주세요.
+                                Kakao.init('4f3ad7efbfbf9c7ced27c410ee3c32e4');  //여기서 아까 발급받은 키 중 javascript키를 사용해준다.
+                                // 카카오 로그인 버튼을 생성합니다.
+                                Kakao.Auth.createLoginButton({
+                                    container: '#kakao-login-btn',
+                                    success: function (authObj) {
+                                        Kakao.API.request({
+                                            url: '/v1/user/me',
+                                            success: function (res) {
+                                                    
+                                                $.post('/api/signUp', {
+                                                    id: res.id,
+                                                    nickname: res.properties.nickname,
+                                                    type: '2' //type 1= 일반유저 , 2= 카카오 유저
+                                                }, function (res) {
+                                                }, 'json')
+                                                .done(function (res) {
+                                                })
+                                                .fail(function (res) {
+                                                    alert('통신 에러입니다. 관리자에게 문의하세요.');
+                                                })
+                                                .always(function (res) {
+                                                    console.log(res);
+                                                    if(res.result===0) {
+                                                        alert('회원 정보가 존재합니다. 로그인 기능을 이용하세요.');
+                                                    }
+                                                })
+                                                
+                                                //console.log(JSON.stringify(res));
+                                                //console.log(res.kaccount_email); //<---- kakao.api.request 에서 불러온 결과값 json형태로 출력
+                                                
+                                                //alert(JSON.stringify(authObj)); //<----Kakao.Auth.createLoginButton에서 불러온 결과값 json형태로 출력
+                                                /*
+                                                console.log(res.id);//<---- 콘솔 로그에 id 정보 출력(id는 res안에 있기 때문에  res.id 로 불러온다)
+                                                console.log(res.kaccount_email);//<---- 콘솔 로그에 email 정보 출력 (어딨는지 알겠죠?)
+                                                console.log(res.properties['nickname']);//<---- 콘솔 로그에 닉네임 출력(properties에 있는 nickname 접근 
+                                                // res.properties.nickname으로도 접근 가능 )
+                                                console.log(authObj.access_token);//<---- 콘솔 로그에 토큰값 출력
+                                                */
+                                            }
+                                        })
+                                    },
+                                    fail: function (err) {
+                                        //alert(JSON.stringify(err));
+                                        alert("카카오api 에러입니다. 관리자에게 문의하세요.");
+                                    }
+                                });
+                                /*************   login check start  ****************/
+                                /*	
+                                $.post('/api/login', {
+                                    check: '0'
+                                }, function (res) {
+                                }, 'json')
+                                .done(function (res) {
+                                })
+                                .fail(function (res) {
+                                    console.log(res.err)
+                                    alert(res.responseText);
+                                    //alert('통신 에러입니다. 관리자에게 문의하세요.');
+                                })
+                                .always(function (res) {
+                                })
+                                */
+                                /*************   login check end  ****************/		
+                                //]]>
+                            </script>
+                            </p>
+                            <button class="dialog__action">Read more &#8594;</button>
+                        </div>
+                        <!-- popup section end -->
+                        <div class="mobile_btn_touch"></div>
+                        <span id="mobile_menu_btn"></span>
+                        <div id="mobile_menu">
+                            <ul class="mobile_menu_ul">
+                                <h2>MENU</h2>
+                                <li class="mobile_menu_list">ABOUT</li>
+                                <li class="mobile_menu_list">MENU</li>
+                                <li class="mobile_menu_list">SHOP</li>
+                                <li class="mobile_menu_list">NEWS</li>
+                                <li class="mobile_menu_list">CONTACT</li>
+                                <li class="mobile_menu_list"><a class="dialog__trigger">login</a></li>
+                                <li class="mobile_menu_list"><a href="/sign">SIGNUP</a></li>
+                            </ul>
+                            <div id="close"></div>
+                        </div>
+                    </div>
+                    </header>
+
     	<div id="wrapper">
                 <section class="intro_one">
                         <div class="intro_one_menu section_image">
@@ -55,8 +190,58 @@
                             allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                 </section>
-      
+      <footer>
+    <div class="footer_wrap">
 
+       <div class="footer_logo"></div>
+       <div class="footer_content">
+          <div class="footer_text">
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae nihil est qui aliquid minus
+                laudantium quod at sunt velit, consequatur voluptatum itaque atque distinctio cumque a omnis
+                consectetur adipisci debitis!</p>
+          </div>
+          <div class="social">
+             <ul class="social_icon">
+                <li class="icon _fb"><a href="#"><img src="/images/snsicon/sns_fb_s.png"
+                         alt="facebook icon"></a></li>
+                <li class="icon _ka"><a href="#"><img src="/images/snsicon/sns_kakao_s.png"
+                         alt="kakao icon"></a></li>
+                <li class="icon _tw"><a href="#"><img src="/images/snsicon/sns_twt_s.png" alt="twiter icon"></a>
+                </li>
+                <li class="icon _ba"><a href="#"><img src="/images/snsicon/sns_naverband_s.png"
+                         alt="band icon"></a></li>
+             </ul>
+          </div>
+       </div>
+       <address>
+          <ul class="contact">CONTACT
+             <li class="contact_list"><span><img src="/images/snsicon/icon/f7e6479a.png"
+                      style="width:30px;height: 30px;" alt=""></span><span class="spantext">경기도 시흥시 정왕4동 고합아파트
+                   108동 1001호</span></li>
+             <li class="contact_list"><span><img src="/images/snsicon/icon/phone-icon-white.png"
+                      style="width:30px;height: 30px;" alt=""></span><span
+                   class="spantext">010-4243-3704</span></li>
+             <li class="contact_list"><span><img src="/images/snsicon/icon/email-icon.png"
+                      style="width:30px;height: 30px;" alt=""></span><span
+                   class="spantext">rladyd818@naver.com</span></li>
+          </ul>
+       </address>
+       <div class="copyright">
+          <ul class="copyright_box">
+             <li class="copyright_list"><a href="">회사소개</a></li>
+             <li class="copyright_list"><a href="">서비스이용안내</a></li>
+             <li class="copyright_list"><a href="">개인정보처리방침</a></li>
+             <li class="copyright_list"><a href="">운영정책</a></li>
+             <li class="copyright_list"><a href="">공지사항</a></li>
+             <li class="copyright_list"><a href="">copyright ⓒ Wanderlust All rights reserved</a></li>
+          </ul>
+       </div>
+    </div>
+ </footer>
+ <script src="/javascripts/swiper-master/dist/js/swiper.min.js"></script>
+ <script src="/javascripts/index.js"></script>
+ <script src="/javascripts/sidemenu/sidemenu.js"></script>
+ <script src="/javascripts/popup.js"></script>
 </body>
 
 </html>

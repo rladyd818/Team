@@ -480,11 +480,11 @@ section {
 	background-image: url(/images/88a23962382907.5a8e6843b183a.jpg);
 }
 
-/*-----------------------footer------------------------------*/
+/*-----------------------login------------------------------*/
 
-.s_main {
-	width: 750px;
-	height: 650px;
+.login_main {
+	width: 300px;
+	height: 200px;
 	padding-top: 10px;
 	padding-left: 50px;
 	padding-right: 50px;
@@ -493,23 +493,79 @@ section {
 	margin: auto;
 }
 
-#form_box,
-#id,
-#pass,
-#pass1 {
+.login_id {
+	width: 250px;
+	height: 20px;
+   margin-left: 10px;
+	margin-bottom: 10px;
+	float: left;
+}
+
+.login_password {
+	width: 250px;
+	height: 20px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	float: left;
+}
+
+.login_button {
+	border: 1px;
+	margin-top: 10px;
+	width: 200px;
+	height: 50px;
+	margin-left: 40px;
+	background-color: orange;
+}
+.login_button:hover{
+	/*
+	text-decoration:underline;
+	*/
+	background-color:darkgoldenrod;
+	cursor: pointer;
+}
+
+/*-----------------------signup------------------------------*/
+
+.s_main {
+	top : 50%;
+	width: 750px;
+	height: 800px;
+	padding-top: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom: 10px;
+	border: 1px solid orange;
+	margin: auto;
+}
+.sign_main {
+	background: coral;
+	height: 1000px;
+	padding-top: 130px;
+}
+
+.s_table {
+	padding:"10%"; 
+	spacing:"0px";
+}
+
+.form_box,
+.id,
+.pass,
+.pass1 {
 	width: 500px;
 	height: 20px;
 	padding-left: 10px;
 	float: right;
 }
 
-#birth_box {
+.birth_box {
 	width: 100px;
 	height: 20px;
 	float: left;
 }
 
-#button {
+.s_button {
 	display: block;
 	margin-top: 25px;
 	border: 1px;
@@ -519,7 +575,7 @@ section {
 	height: 50px;
 	background-color: orange;
 }
-#button:hover{
+.s_button:hover{
 	text-decoration:underline;
 	background-color:darkgoldenrod;
 
