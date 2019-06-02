@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const User = require('../../models/NomalUser');
 const Kakao_User = require('../../models/Kakao');
+var Board = require('../../models/board');
+var Comment = require('../../models/comment');
 const crypto = require('crypto'); //Node.js 에서 제공하는 암호화 모듈
 //const properties = require('../properties/key.js');
 // mapping 

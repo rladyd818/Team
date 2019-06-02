@@ -11,7 +11,6 @@
    <link rel="stylesheet" href="/stylesheets/animation_popup.css">
    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-   <script src="./javascripts/inputDataCheck.js"></script>
 
 </head>
 <body>
@@ -32,7 +31,7 @@
                <li class="list">고객센터
                   <ul class="submenu">
                      <li><a href="">1:1문의</a></li>
-                     <li><a href="">FAQ</a></li>
+                     <li><a href="/board">FAQ</a></li>
                      <li><a href="">공지시항</a></li>
                   </ul>
                </li>
@@ -46,9 +45,21 @@
          <div class="dialog">
             <span class="dialog__close">&#x2715;</span>
             <h2 class="dialog__title">커넥투하트</h2>
-            <p class="dialog__content"><a id="kakao-login-btn"></a>
-            <a href="http://developers.kakao.com/logout"></a>
-            <iframe src="/login2"></iframe>
+            <p class="dialog__content">
+            <div class="login_main">
+        		<h2 style="text-align:center">로그인</h2>
+            <form action="/api/login" method="post">
+            		<!--action지정하기-->
+
+            			<input type="text" class="login_id" name="id" placeholder="아이디" /><br />
+            			<input type="password" class="login_password" name="password" placeholder="비밀번호" /><br />
+            			<input type="submit" class="login_button" value="로그인" onclick="alert('실행이 완료됐습니다.')" />
+					</form>
+					</p>
+					<a style="margin-left:30px;" id="kakao-login-btn"></a>
+					<a href="http://developers.kakao.com/logout"></a>
+					<p>카카오톡 로그인을 원하시면 버튼을 클릭하세요</p>
+    			</div>
             <script type='text/javascript'>
                //<![CDATA[
                // 사용할 앱의 JavaScript 키를 설정해 주세요.
@@ -98,20 +109,6 @@
                      alert("카카오api 에러입니다. 관리자에게 문의하세요.");
                   }
                });
-               /*************   login check   ****************/   
-               $.post('/api/login', {
-                  check: '0'
-               }, function (res) {
-               }, 'json')
-               .done(function (res) {
-               })
-               .fail(function (res) {
-                  console.log(res.err)
-                  alert(res.responseText);
-                  //alert('통신 에러입니다. 관리자에게 문의하세요.');
-               })
-               .always(function (res) {
-               })
                   
                //]]>
             </script>
