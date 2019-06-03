@@ -6,8 +6,8 @@ var logger = require('morgan');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var bluebird = require('bluebird');
-var User = require('./models/NomalUser')
+//var bluebird = require('bluebird');
+//var User = require('./models/NomalUser')
 
 var indexRouter = require('./routes')
 

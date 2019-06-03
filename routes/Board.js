@@ -5,7 +5,7 @@ var Board = require('../models/board');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   Board.find({}, function (err, board) {
-      res.render('BoardMain', { title: 'Express', board: board });
+      res.render('BoardTest', { title: '게시판', board: board });
   });
 });
 

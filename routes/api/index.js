@@ -18,10 +18,13 @@ router.post('/login', function (req, res, next) {
       // User가 없으면 error
       if (!user) return res.json({ error: 'user not found' });
       req.session.user = user;
-      console.log(req.session.user);
-      res.render('main',{name: req.session.user.id});
+      //console.log(req.session.user);
+      res.render('main', { sess: req.session });
       console.log('로그인 성공!');
     });
+  }
+  else {
+    res.render('main', {session: req.session});
   }
   /*
   switch (req.body.check) {

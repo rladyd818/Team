@@ -14,6 +14,8 @@
 
 </head>
 <body>
+   <!--          받아온 세션을 string으로 변환         -->
+   <%-JSON.stringify(sess.user.id)%>
    <header>
       <div class="gnb">
          <a href=""><span class="logo"></span></a>
@@ -38,7 +40,7 @@
             </ul>
          </nav>
          <ul class="login_menu">
-            <li class="list login"><a class="dialog__trigger">LOGIN</a></li>
+            <li class="list login"><a class="dialog__trigger"><%= sess.user.id %></a></li>
             <li class="list login"><a class="dialog__trigger">SIGNUP</a></li>
             <li class="list login"><a class="dialog__trigger">MENU</a></li>
          </ul>
@@ -53,7 +55,7 @@
 
             			<input type="text" class="login_id" name="id" placeholder="아이디" /><br />
             			<input type="password" class="login_password" name="password" placeholder="비밀번호" /><br />
-            			<input type="submit" class="login_button" value="로그인" onclick="alert('실행이 완료됐습니다.')" />
+            			<input type="submit" class="login_button" value="로그인" />
 					</form>
 					</p>
 					<a style="margin-left:30px;" id="kakao-login-btn"></a>
@@ -108,12 +110,11 @@
                      //alert(JSON.stringify(err));
                      alert("카카오api 에러입니다. 관리자에게 문의하세요.");
                   }
-               });
-                  
+               });                  
                //]]>
             </script>
             </p>
-            <button class="dialog__action">Read more &#8594;</button>
+            <button class="dialog__action" onclick="location.href='/sign' ">회원가입 &#8594;</button>
          </div>
          <!-- popup section end -->
          <div class="mobile_btn_touch"></div>
@@ -126,7 +127,7 @@
                <li class="mobile_menu_list">SHOP</li>
                <li class="mobile_menu_list">NEWS</li>
                <li class="mobile_menu_list">CONTACT</li>
-               <li class="mobile_menu_list"><a class="dialog__trigger"><%= name %></a></li>
+               <li class="mobile_menu_list"><a class="dialog__trigger"><%= sess.user.id %></a></li>
                <li class="mobile_menu_list"><a class="dialog__trigger">SIGNUP</a></li>
             </ul>
             <div id="close"></div>
