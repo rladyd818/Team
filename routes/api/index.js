@@ -24,7 +24,7 @@ router.post('/login', function (req, res, next) {
     });
   }
   else {
-    res.render('main', {session: req.session});
+    res.render('main', { sess: req.session });
   }
   /*
   switch (req.body.check) {
@@ -101,7 +101,7 @@ router.post('/signup', function (req, res, next) {
           res.status(500).json(err);
           return;
         } else {
-          res.render('main',{name: 'LOGIN'});
+          res.render('main',{ sess: req.session });
           console.log('회원가입 성공!');
         }
         /*
@@ -111,23 +111,50 @@ router.post('/signup', function (req, res, next) {
       });
   }
   else {
-    console.log("카카오 회원가입");
+    console.log("카카오 회원가입 및 로그인");
 
-      const kakao_user = new Kakao_User();
-      kakao_user.id = req.body.id;
-      kakao_user.nickname = req.body.nickname;
-      kakao_user.save(function (err) {
-        if (err) {
-          console.log(err);
-          res.json({ result: 0 });
-          req.session.user = kakao_user;
-          console.log(req.session.user);
-          //res.json(kakao_user);
-          return;
-        } else {
-          res.json({ result: 1 });
-        }
-      });
+    Kakao_User.findOne({ id: req.body.id }, function (err, user) {
+      // 구문 error
+      if (err) return res.status(500).json({ error: err });
+      // User가 없으면 회원추가
+      if (!user) {
+        const kakao_user = new Kakao_User();
+        kakao_user.id = req.body.id;
+        kakao_user.nickname = req.body.nickname;
+        kakao_user.save(function (err) {
+          if (!err) {
+            // result = 1 성공적응답, result = 2 실패
+            res.json({ result: 1 });
+            console.log('카카오 회원가입 성공!');
+          }
+        });
+      }
+      // User가 있으면 로그인 
+      else {
+        req.session.user.id = user.nickname;
+        res.json({ result: 1 });
+        //res.render('main', { sess: req.session });
+        //res.redirect('/');
+        console.log('카카오 로그인 성공!');
+      }
+    });
+      // const kakao_user = new Kakao_User();
+      // kakao_user.id = req.body.id;
+      // kakao_user.nickname = req.body.nickname;
+      // kakao_user.save(function (err) {
+      //   if (err) {
+      //     // 디비에 이미 유저 정보가 있어서 발생하는 오류
+      //     console.log(err); 
+      //     //res.json({ result: 0 });
+      //     req.session.user = kakao_user;
+      //     console.log(req.session.user);
+      //     res.render('main', { sess: req.session });
+      //     //res.json(kakao_user);
+      //     return;
+      //   } else {
+      //     res.json({ result: 1 });
+      //   }
+      // });
   }
 /*
   switch (req.body.type) {
