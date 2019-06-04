@@ -1,0 +1,44 @@
+
+.c_main {
+    padding-top: 100px;  
+    background: #ffd27d;
+}
+.c_table {
+   padding-left: 30%;
+  padding-bottom: 50px;
+}
+.c_img:hover {
+    border: 1px solid red;
+}
+.c_site1 {
+    padding-right: 80px;
+}
+.c_site2 {
+    height: 40px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-family: 'Do hyeon', sans-serif;
+    color: black;
+}
+.c_site2_1 {
+    font-size: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: rgb(74, 79, 83);
+}
+.c_site3 {
+    font-size: 30px;
+    padding-left: 80px;
+    font-family: 'Do hyeon', sans-serif;
+}
+.c_h1 {
+    text-align:center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 40px;
+    border-bottom: 1px solid orange;
+    border-top: 1px solid orange;
+    font-family: 'Do hyeon', sans-serif;
+    letter-spacing: 10px;
+    
+}
+
