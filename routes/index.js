@@ -10,6 +10,10 @@ var introRouter = require('./intro'); // 홈페이지 소개
 var boardRouter = require('./Board'); // 게시판
 var counselorRouter = require('./counselor'); // 상담사 연결
 var chattestRouter = require('./chatTest');
+var depressRouter= require('./depress'); //우울 검사
+var anxietyRouter= require('./anxiety'); //불안 검사
+var alcoholicRouter= require('./alcoholic'); //알코올중독 검사
+var suicideRouter= require('./suicide'); //자살위험검사
 
 router.use("/",mainRouter);
 router.use("/api",api);
@@ -20,4 +24,8 @@ router.use("/intro",introRouter);
 router.use("/board", boardRouter);
 router.use("/counselor", counselorRouter);
 router.use("/chatTest", chattestRouter);
+router.use("/depress",depressRouter);
+router.use("/anxiety",anxietyRouter);
+router.use("/alcoholic",alcoholicRouter);
+router.use("/suicide",suicideRouter);
 module.exports = router;

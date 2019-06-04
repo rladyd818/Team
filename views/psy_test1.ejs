@@ -15,7 +15,6 @@
 
 </head>
 <body>
-    <%-JSON.stringify(sess.user.id)%>
 	<header>
 		<div class="gnb">
 			<a href="/"><span class="logo"></span></a>
@@ -40,7 +39,7 @@
 				</ul>
 			</nav>
 			<ul class="login_menu">
-				<li class="list login"><a class="dialog__trigger"><%= sess.user.id %></a></li>
+				<li class="list login"><a class="dialog__trigger">login</a></li>
 				<li class="list login"><a href="/sign">SIGNUP</a></li>
 				<li class="list login"><a >MENU</a></li>
 			</ul>
@@ -144,7 +143,7 @@
 					<li class="mobile_menu_list">SHOP</li>
 					<li class="mobile_menu_list">NEWS</li>
 					<li class="mobile_menu_list">CONTACT</li>
-					<li class="mobile_menu_list"><a class="dialog__trigger"><%= sess.user.id %></a></li>
+					<li class="mobile_menu_list"><a class="dialog__trigger">login</a></li>
 					<li class="mobile_menu_list"><a href="/sign">SIGNUP</a></li>
 				</ul>
 				<div id="close"></div>
@@ -155,11 +154,10 @@
 	<aside id="left">
         <h1 class="test_list">심리검사 목록</h1>
         <ul>
-            <li class="leftMenBg"><a target="iframe1" href=" ">우울</a></li>
-            <li class="leftMenBg"><a target="iframe1" href="javascript:selfTest('2');">불안</a></li>
-            <li class="leftMenBg"><a target="iframe1" href="javascript:selfTest('3');">외상 후 스트레스</a></li>
-            <li class="leftMenBg"><a target="iframe1" href="javascript:selfTest('4');">자살 위험</a></li>
-            <li class="leftMenBg"><a target="iframe1" href="javascript:selfTest('5');">알코올 중독</a></li>
+            <li class="leftMenBg"><a href="/depress">우울</a></li>
+            <li class="leftMenBg"><a href="/anxiety">불안</a></li>
+            <li class="leftMenBg"><a href="/suicide">자살 위험</a></li>
+            <li class="leftMenBg"><a href="/alcoholic">알코올 중독</a></li>
         </ul>
     </aside>
 
