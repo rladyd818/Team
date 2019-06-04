@@ -4,6 +4,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   sess = req.session;
+  console.log(req.session);
   if(req.session.user === undefined) {
     console.log('세션 undefined');
     sess.user = {
