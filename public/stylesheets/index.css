@@ -527,6 +527,13 @@ section {
 
 /*-----------------------signup------------------------------*/
 
+
+.sign_main {
+	background: coral;
+	height: 1000px;
+	padding-top: 130px;
+}
+
 .s_main {
 	top : 50%;
 	width: 750px;
@@ -537,16 +544,10 @@ section {
 	padding-bottom: 10px;
 	border: 1px solid orange;
 	margin: auto;
-}
-.sign_main {
-	background: coral;
-	height: 1000px;
-	padding-top: 130px;
-}
 
-.s_table {
-	padding:"10%"; 
-	spacing:"0px";
+}
+.s_article {
+	display:inline;
 }
 
 .form_box,
@@ -559,11 +560,11 @@ section {
 	float: right;
 }
 
-.birth_box {
+/*.birth_box {
 	width: 100px;
 	height: 20px;
-	float: left;
-}
+	float: left; 
+} */
 
 .s_button {
 	display: block;
@@ -595,9 +596,9 @@ section {
 	text-align: center;
 }
 
-.sign_p {
+/*.sign_p {
 	font-size: 10px;
-}
+} */
 
 /*-----------------------footer------------------------------*/
 
