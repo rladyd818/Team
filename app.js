@@ -6,8 +6,8 @@ var logger = require('morgan');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-//var bluebird = require('bluebird');
-//var User = require('./models/NomalUser')
+//var bluebird = require('bluebird'); // 몽구스 poromise에 사용
+//var User = require('./models/NomalUser') // test용 데이터 베이스 코드
 
 var indexRouter = require('./routes')
 
