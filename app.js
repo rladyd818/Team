@@ -6,6 +6,8 @@ var logger = require('morgan');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var socket = require('./socket');
+
 //var bluebird = require('bluebird'); // 몽구스 poromise에 사용
 //var User = require('./models/NomalUser') // test용 데이터 베이스 코드
 
@@ -28,6 +30,7 @@ mongoose.set('useCreateIndex', true);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.set('port', process.env.PORT || 3000);
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -37,6 +40,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
 
 app.use('/', indexRouter);
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
 
 /* database setting test section - start */
 /*
@@ -72,5 +79,11 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+const server = app.listen(app.get('port'), () => {
+  console.log(app.get('port'), '번 포트에서 대기중');
+});
+
+socket(server);
 
 module.exports = app;
