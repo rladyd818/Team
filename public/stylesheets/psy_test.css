@@ -36,8 +36,10 @@
 text-align: center;
 }
 .psy_test_wrapper {
-    background: #ffd27d;  
-    height: 1340px;
+    background: #ffd27d; 
+    height: 1500px;
+    overflow: auto;
+
 }
 .psy_test_main {
     font-family: Arial, Helvetica, sans-serif;
@@ -46,12 +48,19 @@ text-align: center;
     width: 700px;
     float: left;
     margin-left: 50px;
-    margin-top: 100px;
+    margin-top: 150px;
 }
-    
-   .depress_Q,  .depress_A {
+    .main_p {
+        margin-bottom: 50px;
+        font-size: 25px;
+        font-family: 'Do hyeon', sans-serif;
+    }
+   .Q,.A {
        clear: both;
        list-style: none;
+       margin-bottom: 10px;
+       font-family:  'Noto Sans KR', sans-serif;
+       font-weight: bold;
    }
 
    .psy_button {
