@@ -9,7 +9,8 @@ module.exports = (server) => {
     console.log('새로운 클라이언트 접속', ip, socket.id, req.ip);
 
     socket.on('chat message', (msg) => {
-      io.emit('chat message', msg);
+      //console.log(sess.user.id);
+      io.emit('chat message', msg, sess.user.id);
     });
 
     socket.on('disconnect', () => {
