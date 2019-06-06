@@ -17,12 +17,12 @@ router.post('/login', function (req, res, next) {
       // User가 없으면 error
       if (!user) return res.json({ error: 'user not found' });
       req.session.user = user;
-      res.render('main', { sess: req.session });
+      res.redirect('/');
       console.log('로그인 성공!');
     });
   }
   else {
-    res.render('main', { sess: req.session });
+    res.render('main');
   }
 
   //DB에 암호화 하여 저장하였으니 DB에서 확인할때도 암호화 된 키로 확인한다
