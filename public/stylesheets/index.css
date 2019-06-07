@@ -133,7 +133,7 @@ nav {
 	width:100px;
 	background: none;
 	padding: 0;
-	font-size: 0.7rem;
+	font-size: 0.5rem;
 }
 
 .swiper-container {
@@ -545,7 +545,7 @@ section {
 .b_hr {
 	border:#eaecef solid 1px;
 }
-.b_a:link {
+.b_a {
 	color:black;
 	width: 100%;
 }
@@ -570,8 +570,6 @@ section {
 /*********************게시판 글쓰기**********************/
 .bw_form {
 	text-align: center;
-	width:100%;
-	height: 100%;
 }
 .bw_hr {
 	border:orange solid 1px;
