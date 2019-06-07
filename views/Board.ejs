@@ -128,16 +128,16 @@
     <div class="b_main">
         <h3><%=board.title%><span style="float:right; font-size:12px">작성자 : <%=board.author%></span></h3>
         <hr class="b_hr">
-        <form style="background-color:white; width:90%; height:70%; padding:auto;" ><%=board.contents%></form>
+				<div style="background-color:white; width:90%; height:70%; padding:auto;" ><%=board.contents%></div>
+				<form class="b_form2" action="/board/comment/write" method="post">
         <hr>
       <% if (board.comments !== null) {
         var comment = board.comments;
           for(var i = 0; i < board.comments.length; i++) {%>
-    <h4>작성자 : <%=comment[i].author%></h4>
-    <h4>내용 : <%=comment[i].contents%></h4>
+    <p>댓글 작성자 : <%=comment[i].author%></p>
+    내용 : <%=comment[i].contents%></p>
     <hr>
-    <%}}%>
-    <form action="/board/comment/write" method="post">
+		<%}}%>
       <input type="text" name="id" value="<%= board._id %>" hidden>
       댓글 : <textarea name="contents"></textarea><br>
       글쓴이 : <input type="text" name="author"><br>
