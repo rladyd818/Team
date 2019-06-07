@@ -548,7 +548,42 @@ section {
 	padding-bottom: 10px;
 	border: 1px solid orange;
 	margin: auto;
-
+}
+.b_main {
+	top : 50%;
+	width: 750px;
+	height: 800px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	border: 1px solid orange;
+	background-color: #ffdbc1;
+	margin: auto;
+}
+.b_hr {
+	border:#eaecef solid 1px;
+}
+.b_a {
+	color:black;
+	width: 100%;
+}
+.b_a:hover {
+	background: coral;
+}
+.b_a:visited {
+    color: gray;
+}
+.b_li {
+	color:black;
+	list-style: none;
+}
+.b_li:hover {
+	background: coral;
+	cursor: pointer;
+}
+.b_h3 {
+	padding-bottom: 50px;
 }
 .s_article {
 	display:inline;
@@ -556,7 +591,6 @@ section {
 .s_table {
 	position: relative;
 	top: 20px;
-
 }
 
 .form_box,
