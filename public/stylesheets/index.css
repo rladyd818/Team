@@ -91,6 +91,8 @@ nav {
 	cursor: pointer;
 	background:#FFDF9E;
 	color: orangered;
+	font-family: 'Do hyeon', sans-serif;
+	font-size: 20px;
 }
 
 .submenu {
@@ -115,6 +117,8 @@ nav {
 .submenu > li {
 	padding: 20px 0;
 	z-index: -1;
+	font-family: 'Do hyeon', sans-serif;
+	font-size: 20px;
 }
 
 .login_menu {
@@ -783,6 +787,11 @@ address {
 		position: relative;
 		cursor: pointer;
 		transition: all .3s;
+	}
+	.mobile_menu_list a {
+		text-decoration: none;
+		color: white;
+	    font-family: 'Do hyeon', sans-serif;
 	}
 	.mobile_menu_list::after {
 		content: '';

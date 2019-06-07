@@ -6,6 +6,8 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>커넥투하트</title>
    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Noto+Serif:400,700" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
    <link rel="stylesheet" href="/javascripts/swiper-master/dist/css/swiper.min.css">
    <link rel="stylesheet" href="/stylesheets/index.css">
    <link rel="stylesheet" href="/stylesheets/animation_popup.css">
@@ -25,8 +27,8 @@
                </li>
                <li class="list">상담
                   <ul class="submenu">
-                     <li><a href="">튜토리얼</a></li>
-					      <li><a href="/psy_test1">간단한 심리검사</a></li>
+                <!--     <li><a href="">튜토리얼</a></li>-->
+					      <li><a href="/depress">간단한 심리검사</a></li>
                      <li><a href="/counselor">상담사 연결</a></li>
                      <li><a href="/chatTest">채팅테스트</a></li>
                   </ul>
@@ -124,11 +126,11 @@
          <div id="mobile_menu">
             <ul class="mobile_menu_ul">
                <h2>MENU</h2>
-               <li class="mobile_menu_list">ABOUT</li>
-               <li class="mobile_menu_list">MENU</li>
-               <li class="mobile_menu_list">SHOP</li>
-               <li class="mobile_menu_list">NEWS</li>
-               <li class="mobile_menu_list">CONTACT</li>
+               <li class="mobile_menu_list"><a href="/intro">홈페이지 소개</a></li>
+               <li class="mobile_menu_list"><a href="/intro">간단한 심리검사</a></li>
+               <li class="mobile_menu_list"><a href="/intro">상담사 연결</a></li>
+               <li class="mobile_menu_list"><a href="/intro">채팅테스트</a></li>
+               <li class="mobile_menu_list"><a href="/intro">FAQ</a></li>
                <li class="mobile_menu_list"><a class="dialog__trigger"><%= sess.user.id %></a></li>
                <li class="mobile_menu_list"><a href="/sign">SIGNUP</a></li>
             </ul>
