@@ -529,26 +529,7 @@ section {
 	cursor: pointer;
 }
 
-/*-----------------------signup------------------------------*/
-
-
-.sign_main {
-	background:#ffd27d;
-	height: 1000px;
-	padding-top: 130px;
-}
-
-.s_main {
-	top : 50%;
-	width: 750px;
-	height: 800px;
-	padding-top: 10px;
-	padding-left: 50px;
-	padding-right: 50px;
-	padding-bottom: 10px;
-	border: 1px solid orange;
-	margin: auto;
-}
+/*********************게시판 메인**********************/
 .b_main {
 	top : 50%;
 	width: 750px;
@@ -585,6 +566,35 @@ section {
 .b_h3 {
 	padding-bottom: 50px;
 }
+
+/*********************게시판 글쓰기**********************/
+.bw_form {
+	text-align: center;
+}
+.bw_hr {
+	border:orange solid 1px;
+}
+/*-----------------------signup------------------------------*/
+
+
+.sign_main {
+	background:#ffd27d;
+	height: 1000px;
+	padding-top: 130px;
+}
+
+.s_main {
+	top : 50%;
+	width: 750px;
+	height: 800px;
+	padding-top: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom: 10px;
+	border: 1px solid orange;
+	margin: auto;
+}
+
 .s_article {
 	display:inline;
 }
