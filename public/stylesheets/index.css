@@ -184,9 +184,9 @@ section {
 
 .line1 {
 	float: left;
-	width: 75%;
+	width: 100%;
 	height: 100%;
-	background-image: url(/images/gettyimages-151993684.jpg);
+	background-image: url(/images/test1.jpg);
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -199,7 +199,7 @@ section {
 }
 .line_text p{
 	width:300px;
-	color:white;
+	color: white;
 	margin: 10px auto;
 }
 .line_text h2{
@@ -247,7 +247,7 @@ section {
 	color: gray;
 }
 
-.line2 {
+/*.line2 {
 	float: left;
 	width: 25%;
 	height: 100%;
@@ -255,7 +255,7 @@ section {
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
-}
+} */
 
 .section_image {
 	height: 100%;
@@ -305,10 +305,10 @@ section {
 /*--------------------------------------------------*/
 
 .two_menu {
-	background-image: url(/images/9aa1a653416969.593420fad5848.jpg);
+	background-image: url(/images/test2.jpg);
 }
 .two_text{
-	color:white;
+	color:black;
 	width:50%;
 	display: inline-block;
 	position: relative;
@@ -328,17 +328,17 @@ section {
 	text-align: justify;
 }
 .two_menu iframe{
-	float:right;
+	float:left;
 	position: relative;
 	top:50%;
-	right:50px;
+	left:50px;
 	transform: translateY(-50%);
 	border: 10px solid black;
 }
 /*--------------------------------------------------*/
 
 .three_menu {
-	background-image: url(/images/black-coffee-2847957_1920.jpg);
+	background-image: url(/images/test3.jpg);
 	background-attachment: fixed;
 }
 
@@ -347,11 +347,11 @@ section {
 	top: 50%;
 	transform: translateY(-50%);
 	text-align: center;
-	color: white;
+	color: black;
 }
 
 .three_text h2 {
-	color: rgb(160,82,45);
+	color: orangered;
 	font-size: 2.5rem;
 	margin: 0;
 }
@@ -665,14 +665,14 @@ section {
 footer {
 	width: 100%;
 	height: 100%;
-	background-color: black;
+	background-color: coral;
 	position:relative;
 }
 
 .footer_logo {
 	width: 100px;
 	height: 50px;
-	background-image: url(/images/logo.png);
+	background-image: url(/images/maternity.svg);
 	background-position: center;
 	background-size: cover;
 }
@@ -728,6 +728,9 @@ address {
 	width: 100%;
 }
 
+.copyright a{
+	color: black;
+}
 .copyright_box {
 	width: 100%;
 	min-width: 720px;
