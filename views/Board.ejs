@@ -126,7 +126,7 @@
     <hr width=70% color="orange" size=2 /><br>
 
     <div class="b_main">
-        <h3><%=board.title%><span style="float:right; font-size:12px">작성자 : <%=board.author%></span></h3>
+        <h3><%=board.title%><span style="float:right; font-size:12px;">작성자 : <%=board.author%></span></h3>
         <hr class="b_hr">
 				<div style="background-color:white; width:90%; height:70%; padding:auto;" ><%=board.contents%></div>
 				<form class="b_form2" action="/board/comment/write" method="post">
@@ -139,9 +139,9 @@
     <hr>
 		<%}}%>
       <input type="text" name="id" value="<%= board._id %>" hidden>
-      댓글 : <textarea name="contents"></textarea><br>
-      글쓴이 : <input type="text" name="author"><br>
-      <input type="submit" value="확인">
+      댓글 : <textarea style="width:90%;" name="contents"></textarea><br>
+      글쓴이 : <input type="text" name="author" style="margin-top:20px;"><br>
+      <input type="submit" value="확인" style="margin-top:20px; margin-left:300px; border: 1px;  width: 100px; height: 40px; background-color: orange;" >
     </form>
     </div>       
 </section>
