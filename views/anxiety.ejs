@@ -43,7 +43,7 @@
 			</nav>
 			<ul class="login_menu">
 				<li class="list login"><a class="dialog__trigger">login</a></li>
-				<li class="list login"><a href="/sign">SIGNUP</a></li>
+				<li class="list login"><a href="/signup">SIGNUP</a></li>
 			   <!--<li class="list login"><a class="dialog__trigger">MENU</a></li>-->
 			</ul>
 			<div class="dialog">
@@ -133,7 +133,8 @@
 					//]]>
 				</script>
 				</p>
-				<button class="dialog__action" onclick="location.href='/sign'">회원가입 &#8594;</button>
+            <button class="dialog__action" onclick="location.href='/sign'">일반 회원가입 &#8594;</button>
+            <button class="dialog__action" onclick="location.href='/sign_c'">상담사 회원가입 &#8594;</button>
 			</div>
 			<!-- popup section end -->
 			<div class="mobile_btn_touch"></div>
@@ -147,7 +148,7 @@
                   <li class="mobile_menu_list"><a href="/chatTest">채팅테스트</a></li>
                   <li class="mobile_menu_list"><a href="/Board">FAQ</a></li>
                   <li class="mobile_menu_list"><a class="dialog__trigger"><%= sess.user.id %></a></li>
-                  <li class="mobile_menu_list"><a href="/sign">SIGNUP</a></li>
+                  <li class="mobile_menu_list"><a href="/signup">SIGNUP</a></li>
                </ul>
 				<div id="close"></div>
 			</div>
@@ -255,7 +256,7 @@
          </ul> 
         
          <ul class="anxiety_A">
-          <li class="examA">    
+          <li class="A">    
            <input type="radio" name="A3_input" class="A3_input" id="34" value="3"> <label for="34">거의 매일 방해 받았다</label>
           </li>
          </ul> 
@@ -309,7 +310,7 @@
          </ul> 
         
          <ul class="anxiety_A">
-          <li class="examA">    
+          <li class="A">    
            <input type="radio" name="A5_input" class="A5_input" id="53" value="2"> <label for="53">2주 중 절반이상 방해 받았다</label>
           </li>
          </ul> 

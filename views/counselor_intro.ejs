@@ -42,7 +42,7 @@
 			</nav>
 			<ul class="login_menu">
 				<li class="list login"><a class="dialog__trigger">login</a></li>
-				<li class="list login"><a href="/sign">SIGNUP</a></li>
+				<li class="list login"><a href="/signup">SIGNUP</a></li>
 				<!--<li class="list login"><a class="dialog__trigger">MENU</a></li>-->
 			</ul>
 			<div class="dialog">
@@ -132,7 +132,8 @@
 					//]]>
 				</script>
 				</p>
-				<button class="dialog__action" onclick="location.href='/sign'">회원가입 &#8594;</button>
+				<button class="dialog__action" onclick="location.href='/sign'">일반 회원가입 &#8594;</button>
+				<button class="dialog__action" onclick="location.href='/sign_c'">상담사 회원가입 &#8594;</button>
 			</div>
 			<!-- popup section end -->
 			<div class="mobile_btn_touch"></div>
@@ -146,7 +147,7 @@
 						<li class="mobile_menu_list"><a href="/chatTest">채팅테스트</a></li>
 						<li class="mobile_menu_list"><a href="/Board">FAQ</a></li>
 						<li class="mobile_menu_list"><a class="dialog__trigger"><%= sess.user.id %></a></li>
-						<li class="mobile_menu_list"><a href="/sign">SIGNUP</a></li>
+						<li class="mobile_menu_list"><a href="/signup">SIGNUP</a></li>
 					 </ul>
 				<div id="close"></div>
 			</div>
@@ -157,7 +158,8 @@
         	<aside id="left">
 					<h1 class="counseling_list">상담하기</h1>
                    <button onclick="alert('상담사님의 전화번호는 010-1234-5678입니다.')" class="c_button">전화상담하기</button>
-                    <button onclick="alert('상담사님의 카카오톡 아이디는 gds0813입니다.')" class="c_button" >카카오톡 아이디로 채팅하기</button>
+					<button onclick="alert('상담사님의 카카오톡 아이디는 gds0813입니다.')" class="c_button" >카카오톡 아이디로 상담하기</button>
+					<button onclick="location.href='/chatTest'" class="c_button" >채팅창으로 상담하기</button>
                 </aside>
         
         <article class="ci_main">

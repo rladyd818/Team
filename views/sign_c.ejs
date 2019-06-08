@@ -41,7 +41,7 @@
 			</nav>
 			<ul class="login_menu">
 				<li class="list login"><a class="dialog__trigger">login</a></li>
-				<li class="list login"><a href="/sign">SIGNUP</a></li>
+				<li class="list login"><a href="/signup">SIGNUP</a></li>
                 <!--<li class="list login"><a class="dialog__trigger">MENU</a></li>-->
 			</ul>
 			<div class="dialog">
@@ -131,7 +131,8 @@
 					//]]>
 				</script>
 				</p>
-				<button class="dialog__action" onclick="location.href='/sign'">회원가입 &#8594;</button>
+                <button class="dialog__action" onclick="location.href='/sign'">일반 회원가입 &#8594;</button>
+                <button class="dialog__action" onclick="location.href='/sign_c'">상담사 회원가입 &#8594;</button>
 			</div>
 			<!-- popup section end -->
 			<div class="mobile_btn_touch"></div>
@@ -144,8 +145,8 @@
                         <li class="mobile_menu_list"><a href="/counselor">상담사 연결</a></li>
                         <li class="mobile_menu_list"><a href="/chatTest">채팅테스트</a></li>
                         <li class="mobile_menu_list"><a href="/Board">FAQ</a></li>
-                        <li class="mobile_menu_list"><a class="dialog__trigger"><%= sess.user.id %></a></li>
-                        <li class="mobile_menu_list"><a href="/sign">SIGNUP</a></li>
+                        <li class="mobile_menu_list"><a class="dialog__trigger">sign</a></li>
+                        <li class="mobile_menu_list"><a href="/signup">SIGNUP</a></li>
                      </ul>
 				<div id="close"></div>
 			</div>
@@ -196,25 +197,30 @@
                 <td class="site2"><input class="form_box" type="text" name="nickname" placeholder="이름" maxlength="10" required
                         autofocus /><br /></td>
             </tr>
-
             <tr>
-                <td class="site1">
-                    <label>경력<span style="color:red;">*</span></label><br />
-                </td>
-                <td class="site2"><input type="text" name="career" value="학사" placeholder="학사학위를 입력해주세요."/><br/>
-                    <input type="text" name="career" value="석사" placeholder="석사학위를 입력해주세요."/><br />
-                    <input type="text" name="career" value="박사" placeholder="박사학위를 입력해주세요."/><br />
-                </td>
-            </tr>
-            <tr>
-                <td class="site1">
-                    <label>자격증</label><br />
-                </td>
-                <td class="site2"><input type="text" name="license" value="l_1" placeholder="가지고 계신 자격증을 입력해주세요"/><br/>
-                    <input type="text" name="license" value="l_2" placeholder="가지고 계신 자격증을 입력해주세요."/><br />
-                    <input type="text" name="license" value="l_3" placeholder="가지고 계신 자격증을 입력해주세요"/><br />
-                </td>
-            </tr>
+                    <td class="site1">
+                        <label>학위<span style="color:red;">*</span></label><br />
+                    </td>
+                    <td class="site2"><input  class="form_box" type="text" name="career" placeholder="학사학위를 입력해주세요."/><br/>
+                        <input type="text"  class="form_box" name="career" placeholder="석사학위를 입력해주세요."/><br />
+                        <input type="text"  class="form_box" name="career" placeholder="박사학위를 입력해주세요."/><br />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="site1">
+                        <label>자격증</label><br />
+                    </td>
+                    <td class="site2"><input  class="form_box" type="text" name="license" placeholder="가지고 계신 자격증을 입력해주세요"/><br/>
+                        <input type="text"  class="form_box" name="license" placeholder="가지고 계신 자격증을 입력해주세요."/><br />
+                    </td>
+                </tr>
+                <tr>
+                        <td class="site1">
+                            <label>기타 경력</label><br />
+                        </td>
+                        <td class="site2"><input class="form_box" type="text" name="add" placeholder="기타 경력이 있다면 입력해주세요."/><br/>
+                        </td>
+                    </tr>
             <tr>
                 <td class="site1">
                     <label>이메일<span style="color:red;">*</span></label><br /></td>

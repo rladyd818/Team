@@ -44,7 +44,7 @@
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .dialog__action {
+  /*.dialog__action {
     text-transform: uppercase;
     color: black;
     display: block;
@@ -60,6 +60,23 @@
     transition: all 100ms ease-in;
     box-shadow: 0 5px 10px rgba(51, 51, 51, 0.4);
   } */
+
+  .dialog__action  {
+    border: 1px solid orange;
+    width: 170px;
+    height: 40px;
+    background-color: orange;
+    margin-top: 5px;
+    display: block;
+    margin-left:10px;
+    position:relative;
+    font-weight: bold;
+  }
+  .dialog__action:hover {
+    background-color:darkgoldenrod;
+    cursor: pointer;
+  }
+
   .dialog__trigger:focus, .dialog__action:focus {
     outline: 0;
   }
@@ -126,7 +143,7 @@
     line-height: 2rem;
     */
   }
-  .dialog .dialog__action {
+  .dialog  {
     margin: 0;
     font-size: 1rem;
   } 

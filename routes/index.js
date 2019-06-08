@@ -15,6 +15,8 @@ var anxietyRouter= require('./anxiety'); //불안 검사
 var alcoholicRouter= require('./alcoholic'); //알코올중독 검사
 var suicideRouter= require('./suicide'); //자살위험검사
 var counselor_introRouter = require('./counselor_intro'); // 상담사 연결
+var sign_cRouter = require('./sign_c'); // 상담사 회원가입
+var signupRouter = require('./signup'); // 회원가입 선택
 
 router.use("/",mainRouter);
 router.use("/api",api);
@@ -30,4 +32,7 @@ router.use("/anxiety",anxietyRouter);
 router.use("/alcoholic",alcoholicRouter);
 router.use("/suicide",suicideRouter);
 router.use("/counselor_intro", counselor_introRouter);
+router.use("/sign_c",sign_cRouter);
+router.use("/signup",signupRouter);
+
 module.exports = router;
