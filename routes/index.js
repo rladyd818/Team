@@ -1,6 +1,6 @@
 const express = require('express');
-const api = require("./api");
-const board = require("./api/board");
+const api = require("./api"); // 회원 api
+const board = require("./api/board"); // 게시판 api
 const router = express.Router();
 
 var mainRouter = require('./main'); // 메인
