@@ -36,6 +36,7 @@
 						  <!--<li><a href="">공지시항</a></li>-->
 					   </ul>
 					</li>
+<<<<<<< HEAD
 				 </ul>
 			  </nav>
 			  <ul class="login_menu">
@@ -43,6 +44,15 @@
 				 <li class="list login"><a href="/signup">SIGNUP</a></li>
 				 <!--<li class="list login"><a class="dialog__trigger">MENU</a></li>-->
 			  </ul>
+=======
+				</ul>
+			</nav>
+			<ul class="login_menu">
+				<li class="list login"> <a class="dialog__trigger"><%= sess.user.id %></a></li>
+				<li class="list login"><a href="/sign">SIGNUP</a></li>
+				<!--<li class="list login"><a >MENU</a></li>-->
+			</ul>
+>>>>>>> 66433b3ce0e4a42a4e0e570dbc0b89ab20aba677
 			<div class="dialog">
 				<span class="dialog__close">&#x2715;</span>
 				<h2 class="dialog__title">커넥투하트</h2>
@@ -143,7 +153,7 @@
 					<li class="mobile_menu_list">SHOP</li>
 					<li class="mobile_menu_list">NEWS</li>
 					<li class="mobile_menu_list">CONTACT</li>
-					<li class="mobile_menu_list"><a class="dialog__trigger">login</a></li>
+					<li class="mobile_menu_list"> <a class="dialog__trigger"><%= sess.user.id %></a></li>
 					<li class="mobile_menu_list"><a href="/sign">SIGNUP</a></li>
 				</ul>
 				<div id="close"></div>
