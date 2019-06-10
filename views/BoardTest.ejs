@@ -39,7 +39,7 @@
 				</ul>
 			</nav>
 			<ul class="login_menu">
-				<li class="list login"><a class="dialog__trigger">login</a></li>
+				<li class="list login"> <a class="dialog__trigger"><%= sess.user.id %></a></li>
 				<li class="list login"><a href="/sign">SIGNUP</a></li>
 				<!--<li class="list login"><a >MENU</a></li>-->
 			</ul>
@@ -143,7 +143,7 @@
 					<li class="mobile_menu_list">SHOP</li>
 					<li class="mobile_menu_list">NEWS</li>
 					<li class="mobile_menu_list">CONTACT</li>
-					<li class="mobile_menu_list"><a class="dialog__trigger">login</a></li>
+					<li class="mobile_menu_list"> <a class="dialog__trigger"><%= sess.user.id %></a></li>
 					<li class="mobile_menu_list"><a href="/sign">SIGNUP</a></li>
 				</ul>
 				<div id="close"></div>
