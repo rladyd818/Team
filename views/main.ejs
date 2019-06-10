@@ -17,7 +17,7 @@
 </head>
 <body>
    <!--          받아온 세션을 string으로 변환         -->
-   <%-JSON.stringify(sess)%>
+    
    <header>
       <div class="gnb">
          <a href=""><span class="logo"></span></a>
@@ -29,14 +29,14 @@
                   <ul class="submenu">
 					      <li><a href="/depress">간단한 심리검사</a></li>
                      <li><a href="/counselor">상담사 연결</a></li>
-                     <li><a href="/chatTest">채팅테스트</a></li>
+                     <%# <li><a href="/chatTest">채팅테스트</a></li> %>
                   </ul>
                </li>
                <li class="list">고객센터
                   <ul class="submenu">
                      <li><a href="">1:1문의</a></li>
-                     <li><a href="/board">FAQ</a></li>
-                     <li><a href="">공지시항</a></li>
+                     <!--<li><a href="/board">FAQ</a></li>-->
+                     <!--<li><a href="">공지시항</a></li>-->
                   </ul>
                </li>
             </ul>
